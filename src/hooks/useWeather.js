@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import {BASE_URL, units, lang, API_KEY} from '../api/api'
 import getCurrentDay from '../utils/getCurrentDay'
-// import getDetailedForecast from '../utils/getDetailedForecat';
+import getDetailedForecast from '../utils/getDetailedForecat';
 
 
 const useWeather = () => {
@@ -15,18 +15,15 @@ const useWeather = () => {
 
     const submitRequest = async city => {
         const {data} = await axios(`${BASE_URL}?q=${city}&units=${units}&lang=${lang}&appid=${API_KEY}`);
-
-        setLoading(true)
+        setLoading(true);
         setError(false);
-
         collectForecastData(data);
      }
 
      const collectForecastData = async data => {
         const dayForecast =  getCurrentDay(data, data.name, data.main);
-        // const dayDetails = getDetailedForecast(data.main);
-        console.log(dayForecast)
-        setForecast({dayForecast});
+        const dayDetails = getDetailedForecast(data);
+        setForecast({dayForecast, dayDetails});
         setLoading(false);
             }
 
