@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import Items from '../Items/Items';
 
+import style from './Details.module.css'
+
 const Details = ({forecast}) => {
     return (
-        <div className='mt-4 mt-md-2'>
-            <div className='d-flex'>
-                {forecast.map(item => (
-                    <Items {...item} key={item.name}/>
-                ))}
-            </div>
+        <div className={style.content}> 
+            {forecast.map(item => (
+                <Items {...item} key={item.name}/>
+            ))}
         </div>
     )
 

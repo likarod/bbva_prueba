@@ -12,11 +12,12 @@ const useWeather = () => {
     const [forecast, setForecast] = useState(null);
 
     //Llamada a la API
-
     const submitRequest = async city => {
         const {data} = await axios(`${BASE_URL}?q=${city}&units=${units}&lang=${lang}&appid=${API_KEY}`);
+
         setLoading(true);
         setError(false);
+        
         collectForecastData(data);
      }
 
@@ -24,8 +25,7 @@ const useWeather = () => {
         const dayForecast =  getCurrentDay(data, data.name, data.main);
         const dayDetails = getDetailedForecast(data);
         setForecast({dayForecast, dayDetails});
-        setLoading(false);
-            }
+        }
 
 
     return {

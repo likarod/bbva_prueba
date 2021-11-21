@@ -13,21 +13,27 @@ const Form = ({search}) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-   
-            <input
-                aria-label="location"
-                type="text"
-                className={`${style.box} form-control`}
-                placeholder="Search for location"
-                required
-                value={city}
-                onChange={e => setCity(e.target.value) }
-            />
+        <form onSubmit={onSubmit} className={style.box}>
+            <h1>Wheater App</h1>
+            <div className={style.input}>
+                <input
+                    aria-label="location"
+                    type="text"
+                    placeholder=""
+                    required
+                    value={city}
+                    onChange={e => setCity(e.target.value) }
+                />
+                <label for="">Ingrese ciudad o país</label>
+            </div>
+           
+           <div className={style.button_box}>
+               <button type="submit" className={style.button} onClick={onSubmit}>
+                Buscar
+                </button>
+            </div>
 
-            <button type="submit" className={style.button} onClick={onSubmit}>
-                SEARCH
-            </button>
+            
         </form>
     )
 }

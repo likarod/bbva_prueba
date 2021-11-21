@@ -8,6 +8,7 @@ import Forecast from '../../containers/Forecast/Forecast.js';
 import useWeather from '../../hooks/useWeather';
 
 import style from './Main.module.css';
+import variables from '../../styles/variables.module.css'
 
 const Main = () => {
     const {newError, isLoading, forecast, submitRequest} = useWeather();
@@ -17,22 +18,18 @@ const Main = () => {
     }
 
     return(
-        <Fragment >
+        <Fragment className={variables}>
             {!forecast && (
-                 <section className={`${style.box} position-relative`}>
-                    <div>
-                        {!isLoading && <Form search={onSubmit}/>}
-                        {newError && <Error message={newError}/>}
-                        {isLoading && <Load/> }
-                        {/* Card Forescast */}
-                    </div>
+                 <section className={`${style.box}`}>
+                    {!isLoading && <Form search={onSubmit}/>}
+                    {newError && <Error message={newError}/>}
+                    {isLoading && <Load/> }
+                    {/* Card Forescast */}
                 </section>
             )}
             <section>
-                <div>
                 {forecast && <Forecast forecast={forecast}/>}
                 {/* List of cities */}
-                </div>
             </section>
            
         </Fragment>

@@ -1,8 +1,13 @@
+p{
+    margin:10px;
+}
+
 .box {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 50px;
     border-radius: var(--main-border-radius);
     -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);

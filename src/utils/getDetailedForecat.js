@@ -1,6 +1,6 @@
 const getDetailedForecast = data => [
     {
-        name: 'Humidity',
+        name: 'Humedad',
         value: data.main.humidity,
         unit: '%'
     },
@@ -15,7 +15,7 @@ const getDetailedForecast = data => [
         unit: 'ºC'
     },
     {
-        name: 'Temp max',
+        name: 'Temp máx',
         value: Math.round(data.main.temp_max),
         unit: 'ºC'
     },

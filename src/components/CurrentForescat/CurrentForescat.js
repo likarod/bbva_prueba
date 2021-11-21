@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import style from './CurrentForescat.module.css';
+
+
 const CurrentForecast = ({weekday, location, temperature, weatherIcon}) => {
 
     return (
-        <div className='d-flex'> 
-            <div className="d-flex flex column justifiy-content">
-                <div>
-                    <h2 className="font-weight-bold mb-1">
-                        <span>{temperature}</span>°C
-                    </h2>
-                    <h3 className="font-weight">
-                        <span> {location} </span>
-                    </h3>
-                    <p>
-                        <span> {weekday} </span>
-                    </p>
-                </div>
-                <div>
-                    <img width={20} src={weatherIcon} alt= "Ícono del tiempo actual"/>
-                </div>
+        <div className={style.container}>
+            <div className={style.content}>
+                <h3 className={style.temp_info}>
+                    <span>{temperature}</span>°C
+                </h3>
+                <p>
+                    <span className={style.city}> {location} </span>
+                </p>
+                <p>
+                    <span className={style.weekday}>  {weekday} </span>
+                </p>
+            </div>
+            <div>
+                <img width={20} src={weatherIcon} alt= "Ícono del tiempo actual" className={style.weather_icon}/>
             </div>
         </div>
     )
