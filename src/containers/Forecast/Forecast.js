@@ -15,7 +15,7 @@ const Forecast = ({forecast}) => {
         <CityConsumer>
             {(obj) => ( 
             <div className={style.box}>
-                <div> 
+                <div className={style.card}> 
                     <CurrentForecast  {... forecast.dayForecast}/> 
                 </div>
 
@@ -23,8 +23,8 @@ const Forecast = ({forecast}) => {
                     <Details forecast={forecast.dayDetails}/>
                 </div>
                 <div></div> {/* Upcoming Days */}
-                <div>
-                    <button name="guardar" type="submint" onClick={() => obj.metodo([...obj.contexto])}>
+                <div className={style.block}>
+                    <button name="guardar" type="submint" onClick={() => obj.metodo([...obj.contexto])} className={style.button}>
                         Guardar ciudad
                     </button>
                 </div>
