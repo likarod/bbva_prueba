@@ -6,7 +6,7 @@ import style from './Error.module.css'
 
 const Error = ({message}) => {
     return (
-        <div className= {`${style.error} alert position-absolute`} role="alert">
+        <div className= {`${style.error}`} role="alert">
             {message}
         </div>
     );

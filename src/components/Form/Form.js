@@ -24,7 +24,7 @@ const Form = ({search}) => {
                     value={city}
                     onChange={e => setCity(e.target.value) }
                 />
-                <label for="">Ingrese ciudad o país</label>
+                <label htmlFor=''>Ingrese ciudad o país</label>
             </div>
            
            <div className={style.button_box}>

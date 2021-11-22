@@ -1,4 +1,5 @@
 import React, {Fragment} from "react";
+import PropTypes from 'prop-types';
 
 import Form from '../Form/Form'
 import Load from '../Load/Load'
@@ -8,9 +9,8 @@ import Forecast from '../../containers/Forecast/Forecast.js';
 import useWeather from '../../hooks/useWeather';
 
 import style from './Main.module.css';
-import variables from '../../styles/variables.module.css'
 
-const Main = () => {
+const Main = ({variables}) => {
     const {newError, isLoading, forecast, submitRequest} = useWeather();
     
     const onSubmit = (value) =>{
@@ -18,22 +18,29 @@ const Main = () => {
     }
 
     return(
-        <Fragment className={variables}>
-            {!forecast && (
-                 <section className={`${style.box}`}>
-                    {!isLoading && <Form search={onSubmit}/>}
-                    {newError && <Error message={newError}/>}
-                    {isLoading && <Load/> }
-                    {/* Card Forescast */}
-                </section>
-            )}
-            <section>
-                {forecast && <Forecast forecast={forecast}/>}
-                {/* List of cities */}
-            </section>
-           
+        <Fragment>
+             {!forecast && (
+                <div className={variables}>
+                    <div className={`${style.box}`}>
+                        {!isLoading && <Form search={onSubmit}/>}
+                        {isLoading && <Load/> }
+                        {newError && <Error message={newError}/>}
+                        {/* Card Forescast */}
+                    </div>
+                </div>  
+                )}
+                <div className={variables}>
+                    <article>
+                        {forecast && <Forecast forecast={forecast}/>}
+                        {/* List of cities */}
+                    </article>
+                </div>
         </Fragment>
     )
+}
+
+Main.propType = {
+    variables : PropTypes.object,
 }
 
 export default Main;

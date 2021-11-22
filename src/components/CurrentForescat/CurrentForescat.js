@@ -19,7 +19,7 @@ const CurrentForecast = ({weekday, location, temperature, weatherIcon}) => {
                     <span className={style.weekday}>  {weekday} </span>
                 </p>
             </div>
-            <div>
+            <div className={style.box_img}>
                 <img width={20} src={weatherIcon} alt= "Ícono del tiempo actual" className={style.weather_icon}/>
             </div>
         </div>

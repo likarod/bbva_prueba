@@ -22,13 +22,11 @@ const Forecast = ({forecast}) => {
                 <div> 
                     <Details forecast={forecast.dayDetails}/>
                 </div>
-                <div></div> {/* Upcoming Days */}
-                <div className={style.block}>
+                {/* <div className={style.block}>
                     <button name="guardar" type="submint" onClick={() => obj.metodo([...obj.contexto])} className={style.button}>
                         Guardar ciudad
                     </button>
-                </div>
-                {console.log(obj)}
+                </div> */}
             </div>
             )}
         </CityConsumer>
