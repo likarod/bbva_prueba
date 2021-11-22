@@ -41,7 +41,7 @@ La API que se ha utilizado para la prueba es [OpenWeather API](https://openweath
 Para el testeo correcto del ciclo de vida de la API se utilizó la herramienta de [POSTAMAN](https://www.postman.com/)
 
 ## Autora ✒️
-** Lina Katherine L.R [Likaro-nav](https://github.com/Likaro-nav)
+**Lina Katherine L.R [Likaro-nav](https://github.com/Likaro-nav)**
 ## Licencia 📄
 Este proyecto está bajo la licencia MIT
 ## Agradecimiento 🎁
